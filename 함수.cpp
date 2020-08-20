@@ -70,23 +70,181 @@
 //	
 //}
 
+//#include <stdio.h>
+//#include <math.h>
+//
+//
+//int Mul(int x, int y)
+//{
+//	int mul=1;
+//	for(int i=1;i<=y;i++){
+//		mul=mul*x;
+//	}
+//	return mul;
+//}
+//int main()
+//{
+//	int a,b, mul;
+//	scanf("%d %d", &a, &b);
+//	mul=Mul(a,b);
+//	printf("%d", mul);
+//	
+//}
+
+//배열에 5개의 정수를 입력받아 오름차순으로 출력하 기 
+//#include <stdio.h>
+//
+//int Input(int a[], int num)
+//{
+//	for(int i=0;i<num;i++){
+//		scanf("%d", &a[i]);
+//	}
+//}
+//
+//int Output(int a[], int num)
+//{
+//	for(int i=0;i<num;i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+//
+//int Sort(int a[], int num)
+//{
+//	int temp=0;
+//	for(int i=0;i<num-1;i++){
+//		for(int j=i+1;j<num; j++){
+//			if(a[i]>a[j]){
+//				temp=a[i];
+//				a[i]=a[j];
+//				a[j]=temp;
+//			}
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[5]={0,};
+//	
+//	Input(arr,5);
+//	Sort(arr,5);
+//	Output(arr,5);
+//}
+
+//#include <stdio.h>
+//
+//int Input(int a[],int num)
+//{
+//	for(int i=0;i<num;i++){
+//		scanf("%d", &a[i]);
+//	}
+//}
+//
+//int Output(int a[],int num)
+//{
+//	for(int i=0;i<num;i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+//
+//int Sort(int a[],int num)
+//{
+//	int temp;
+//	for(int i=0;i<num-1;i++){
+//		for(int j=i+1;j<num;j++){
+//			if(a[i]>a[j]){
+//				temp=a[i];
+//				a[i]=a[j];
+//				a[j]=temp;
+//			}
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10]={0,}, n;
+//	scanf("%d", &n);
+//	
+//	Input(arr,n);
+//	Output(arr,n);
+//	Sort(arr,n);
+//}
+
+//#include <stdio.h>
+//
+//void Name(int n)
+//{
+//	if(n<1)
+//		return ;
+//	Name(n-1);
+//	printf("강은빈\n");
+//}
+//
+//int main()
+//{
+//	Name(5);
+//}
+
+//#include <stdio.h>
+//
+//void Name(int n)
+//{
+//	if(n<1)
+//		return ;
+//	Name(n-1);
+//	printf("강은빈\n");
+//}
+//
+//int main()
+//{
+//	int num;
+//	scanf("%d", &num);
+//	Name(num);
+//}
+
+//#include <stdio.h>
+//
+//void Num(int n)
+//{
+//	if(n<1){
+//		return ;
+//	}
+//	Num(n-1);
+//	printf("%d ",n);
+//}
+//
+//int main()
+//{
+//	int num;
+//	scanf("%d", &num);
+//	
+//	Num(num);
+//}
+
+//#include <stdio.h>
+//
+//void Num(int n)
+//{
+//	if(n<1){
+//		return ;
+//	}
+//	
+//	printf("%d ", n); //짜증나는 문제  
+//	Num(n-1); 
+//}
+//
+//int main()
+//{
+//	int num;
+//	scanf("%d", &num);
+//	
+//	Num(num);
+//}
+
 #include <stdio.h>
-#include <math.h>
 
-
-int Mul(int x, int y)
-{
-	for(int i=2;i<=y;i++){
-		x=x*x;
-	}
-	return x;
-}
 int main()
 {
-	int a,b, mul;
-	scanf("%d %d", &a, &b);
-	mul=Mul(a,b);
-	printf("%d", mul);
 	
-}
-
+ } 
