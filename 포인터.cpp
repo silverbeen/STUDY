@@ -46,7 +46,7 @@ int main()
 	}	
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -60,12 +60,36 @@ int main()
 	}
 	for(i=0;i<10;i++)
 	printf("%d ", *(p+i));
-} 
+} */
  
 
- //#include <stdio.h>
-//
-//int main()
-//{
-//	char[25]={A,}
-//}
+/*#include <stdio.h>
+
+int main()
+{
+	char arr[26], *ap=arr;
+	for(int i=0;i<26;i++){
+		*(ap+i)='A'+i;
+	}
+	
+	for(int i=0;i<26;i+=2){
+		printf("%c ", *(ap+i));
+	}
+}*/
+
+/*#include <stdio.h>
+
+int main()
+{
+	int arr[101], *ap=arr;
+	for(int i=0;i<=100;i++){
+		*(ap+i)=i+i;
+	}
+	
+	for(int i=0;i<=100;i++){
+		printf("%d ", *(ap+i));
+	}
+}*/
+
+
+
