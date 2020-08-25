@@ -1,4 +1,4 @@
-## console.log() 사용하기
+# console.log() 사용하기
 
 console.log() 함수는 Hello, world!출력합니다
 
@@ -8,7 +8,7 @@ console.log() 함수는 Hello, world!출력합니다
 
 
 
-### 로깅변수
+## 로깅변수
 
 console.log() 는 모든 종류의 변수를 기록하는 데 사용할 수 있습니다. 
 
@@ -31,7 +31,7 @@ console.log("thisVar:", thisVar, "and thatVar:", thatVar);
 
 
 
-### 자리 표시 자
+## 자리 표시 자
 
 placeholder 와 함께 console.log()를 사용 할 수 있습니다.
 
@@ -44,7 +44,7 @@ console.log("%s, %s!", greet, who);
 
 
 
-### 객체 로깅
+## 객체 로깅
 
 **`API` 호출에서 `JSON` 응답을 로깅하는데 종종 유용합니다.**
 
@@ -63,7 +63,7 @@ console.log({
 
 
 
-### HTML 요소 로깅 
+## HTML 요소 로깅 
 
 DOM 내에 존재하는 모든 요소를 기록 할 수 있습니다.
 
@@ -73,7 +73,7 @@ console.log(document.body);
 
 
 
-### DOM API 사용하기 
+## DOM API 사용하기 
 
 > `DOM`은 D의 document O를 object M의 MODEL을 의미합니다.
 >
@@ -101,9 +101,93 @@ id `paragraph` 이있는 요소를 선택하고 텍스트 내용을 "Hello, Worl
 
 
 
-## console.log() 실수
+## window.alert() 사용하기
 
-#### log
+`alert` 방법은 화면에 시각적 경고 상자를 표시합니다.
+
+매개 변수는 일반 텍스트로 사용자에세 표시
+
+```
+window.alert(message);
+```
+
+`window` 는 전역 객체이기 때문에 아래와 같은 단축형 사용
+
+```
+alert(message);
+```
+
+`window.alert()` 가 하는 일
+
+```
+alert('hello, World');
+```
+
+
+
+### 노트
+
+`window.alert()` 대신 `alert()` 를 직접 사용할 수 있다.
+
+`console.log`  사용 하는것과는 달리, `alert`는 프롬프트에 응답 할 때까지 코드 호출 `alert`가 일시 중지 의미
+
+경고가 해제 될 때까지 다른 JS 코드 실행 되지 않음 의미
+
+```
+alert('Pause!');
+console.log('Alert was dismissed');
+```
+
+실제로 모달 대화 상자가 표시 되어도 사양에 따라 다른 이벤트로 코드가 실행될 수 있음
+
+이러한 구현에서는 모달 대화 상자가 표시되는 동안 다른 코든 실행
+
+알림을 사용하면 사용자가 페이지를 사용하지 못하도록 차단하는 방법이 사용자 환경을 개선 할 수 있다.
+
+
+
+## window.confirm() 사용하기
+
+`window.confirm()` 선택적 메시지롸 확인 및 취소라는 **두 개의 버튼**이 존재
+
+```
+result = window.confirm(message);
+ 
+```
+
+**message**는 대화 상자에 표시될 선택적 문자열 
+
+**result** 는 OK또는 Cancel이 선택 되었는지 나타내는 값
+
+
+
+`window.confirm()` 일반 적으로 제어판에서 무언가르 삭제하는 것과 같은 위험한 작업을 수행 하기 전에 사용자 확인을 요청하는 데 사용함
+
+```
+if(window.confirm("Are you sure you want to delete this?")) {
+    deleteItem(itemId);
+}
+```
+
+
+
+사용자의 변수가 필요하다면 사용자의 결과 값을 저장하면 됨
+
+```
+var deleteConfirm = window.confirm("Are you sure you want to delete this?");
+```
+
+
+
+### 노트
+
+
+
+# console.log() 실수
+
+
+
+## log
 
 ```
 var a = 1;
@@ -125,7 +209,7 @@ console.error('에러'); // 직접 실행해보자
 
 
 
-##### **가장 많이 실수 하는 부분**
+### **가장 많이 실수 하는 부분**
 
 ```
 var obj = {};
@@ -144,7 +228,7 @@ console.log(obj);
 
 
 
-#### dir
+## dir
 
 **객체는 dir, 나머지는 log로 로깅하는 것이 편함**
 
@@ -158,7 +242,7 @@ DOM 객체의 메서드가 뭐가 있는지 보고 싶은데 대크만 보인다
 
 
 
-#### count
+## count
 
 **몇 번 호출되었나 로깅하고 싶을 때 사용함**
 
@@ -172,7 +256,7 @@ console.count('카운터1'); // 카운터1: 3
 
 
 
-#### time, timeEnd
+## time, timeEnd
 
 코드 수행 시간을 확일 할때 유용 time 과 timeEnd에 같은 타이머 이름을 주어야 정상적으로 작동
 
