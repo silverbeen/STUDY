@@ -181,6 +181,39 @@ var deleteConfirm = window.confirm("Are you sure you want to delete this?");
 
 ### 노트
 
+윈도우 객체가 항상 암묵적이기 때문에 제거 된 윈도우 표기버븡로 확인 메소드를 호출 하는 것은 일반적으로 받아들임
+
+유사하게 명명 된 메서드를 사용하여 낮은 범위 수준에서의 구현으로 인해 예상되는 동작이 변경 될 수 있으므로이 창 개체를 명시 적으로 정의하는 것이 좋음
+
+
+
+## window.prompt() 사용하기
+
+`prompt()` 메서드를 사용하면 사용자로부터 입력을 쉽게 얻을 수 있다.
+
+```
+prompt(text, [default]);
+```
+
+text :  프롬프트 상자에 표시된 텍스트
+
+default : 입력 필드의 기본값(선택사항)
+
+
+
+```
+let age = prompt("How old are you?");
+console.log(age); // Prints the value inserted by the user
+```
+
+사용자가 확인 버튼을 클릭하면 입력 값이 반환됨
+
+그렇지 않은 경우, 메소드는 `null` 리턴한다
+
+`prompt` 의 반환 값은 사용자가 Cancel을 클릭하지 않는 한 항상 문자열이며, 이 경우 `null`을 반환한다.
+
+
+
 
 
 # console.log() 실수
