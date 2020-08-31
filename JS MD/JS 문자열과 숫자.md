@@ -1,6 +1,10 @@
 # 데이터 타입 (자료형)
 
+
+
 ## 문자열(string) 과 숫자(number)
+
+
 
 ### **숫자 (number)** 
 
@@ -113,4 +117,61 @@ var pos = str.search("locate");
 두가지 방법은 동일하지 않습니다.
 
 1. search() 메서드는 두 번째 시작 위치 인수를 사용할 수 없다.
-2. indexOF()는 강력한 검색 값을 사용할ㄴ 수 없다
+2. indexOF()는 강력한 검색 값을 사용할 수 없다
+
+
+
+#### slice()
+
+문자열의 일부를 추출하고 추출된 부분을 새 문자열로 반환한다
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+```
+
+결과는 : Banana
+
+7에서부터 13을 잘라서 그 부분만 공개한다는 뜻
+
+
+
+#### substring()
+
+silce()와 비슷함
+
+차이점은 음수 인덱스를 허용 할 수 없다.
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+```
+
+
+
+#### substr()
+
+slice()와 비슷함
+
+차이점은 두번째 매개 변수가 추출된 부분이 **길이를 지정**
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+```
+
+두번째 매개변수를 생략하면 나머지 문자열을 잘라냅니다.
+
+
+
+#### 문자열 내용 바꾸기
+
+##### replace()
+
+지정된 값을 문자열의 다른 값으로 바꿈
+
+```
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+```
+
