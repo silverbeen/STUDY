@@ -71,3 +71,15 @@ HTML body 에 위에 코드를 넣게 되면 HTML 에서 버튼이 `night`  `day
 
 
 즉, <input> 태그 속성에 onclick 속성이 들어 있고, 속성 값으로는 자바스크립트 코드가 들어와 있고, 그 덕분에 실행이 된다. 
+
+
+
+### onmouseover
+
+사용자가 HTML 요소 위로 마우스를 이동합니다
+
+
+
+### onmouseout
+
+사용자가 HTML 요소에서 마우스를 멀리 이동합ㄴ디ㅏ.
