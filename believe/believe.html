@@ -8,19 +8,50 @@
     <link rel="stylesheet" href="./reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <span><img src="./logo.png" alt="로고"></span>
-        <span>로그인</span>
+        <img id="logo" src="./believe-img/logo.png" alt="로고">
+        <span>BELIEVE</span>
+        <span id="modal" onclick="login()">login</span>
     </header>
+    <!-- 강조글 -->
     <section>
-        <div class="main-center">
-            <img src="./main-center.png" alt="메인글">
+        <div id="sidebar" class="main-left">
+            <div id="sidebar-meun">
+                <li>
+                    <a href="">소개하기</a>
+                    <a href="">CLANDER</a>
+                    <a href="./list.html">시험점수 & 목표</a>
+                    <a href="">공부계획하기</a>
+                </li>
+            </div>
         </div>
-        <button type="button" onclick="">시작하기</button>
+        <div class="main">
+            <div class="main-center">
+                <img src="./believe-img/main-center.png" alt="메인글">
+            </div>
+            <button type="button" onclick="">시작하기</button>
+
+            <!-- 로그인 클릭시 뜨는 창 -->
+            <div id="modal-login">
+                <div id="modal-main">
+                    <div id="modal-center">
+                        <span>BELIEVE</span>
+                        <input class="login" type="text", placeholder="아이디 또는 전화번호를 입력하세요">
+                        <input  class="login"type="password", placeholder="비밀번호를 입력하세요">
+                        <button class="login" type="button" >로그인</button>
+                        <button class="login">facebook 로그인</button>
+                    </div>
+                </div>
+                <div id="background">
+                
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
+    <!-- <section>
         <div class="main">
             <div class="main-explan">
                 <div class="main-img">
@@ -60,6 +91,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    
+    <!-- 설명글 -->
+    
+     <!-- 로그인 클릭시 뜨는 창 -->
+     
+    
+    <script src="./believe.js"></script>
 </body>
 </html>
