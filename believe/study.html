@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./believe.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id="logo" src="./logo.png"  alt="로고">
+        <span >BELIEVE</span>
+        <span id="modal" onclick="login()">login</span>
+    </header>
+    <!-- 강조글 -->
+    <section>
+        <div id="sidebar" class="main-left">
+            <div id="sidebar-meun">
+                <li>
+                    <a href="./produce.html">소개하기</a>
+                    <a href="">CLANDER</a>
+                    <a href="./list.html">시험점수 & 목표</a>
+                    <a href="./study.html">공부계획하기</a>
+                </li>
+            </div>
+        </div>
+        <div class="main"></div>
+
+            <!-- 로그인 클릭시 뜨는 창 -->
+            <div id="modal-login">
+                <div id="modal-main">
+                    <div id="modal-center">
+                        <span>BELIEVE</span>
+                        <input class="login" type="text", placeholder="아이디 또는 전화번호를 입력하세요">
+                        <input  class="login"type="password", placeholder="비밀번호를 입력하세요">
+                        <button class="login" type="button" >로그인</button>
+                        <button class="login">facebook 로그인</button>
+                    </div>
+                </div>
+                <div id="background">
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./believe.js"></script>
+</body>
+</html>

@@ -37,4 +37,3 @@ document.getElementById("logo"),addEventListener("mouseout", ()=>{
 document.getElementById("sidebar").addEventListener("mouseover", ()=>{
     sidebar.style.display="block";
 });
- 
