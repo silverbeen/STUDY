@@ -164,14 +164,41 @@ var res = str.substr(7, 6);
 
 
 
-#### 문자열 내용 바꾸기
+#### 
 
-##### replace()
+#### replace()
 
 지정된 값을 문자열의 다른 값으로 바꿈
 
 ```
 str = "Please visit Microsoft!";
 var n = str.replace("Microsoft", "W3Schools");
+```
+
+결과 값 : Please visit W3Schools
+
+
+
+#### concat()
+
+두 개 이상의 문자열을 결합합니다.
+
+더하기 연산자 대신에 사용할 수 있다. 
+
+```
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+```
+
+
+
+#### string.trim()
+
+문자열의 양쪽에서 공백을 제거 합니다.
+
+```
+var str = "       Hello World!        ";
+alert(str.trim());
 ```
 
