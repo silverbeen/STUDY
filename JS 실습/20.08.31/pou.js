@@ -78,5 +78,16 @@ str = "Please visit Microsoft!";
 var n = str.replace("Microsoft", "W3Schools");
 document.getElementById("replace").innerHTML=n;
 
+var text1 = "Hello";
+var text2 = "World!";
+var text3 = text1.concat(" ",text2);
+document.getElementById("concat").innerHTML = text3;
+
+function trim()
+{
+    var str = "       Hello World!        ";
+    alert(str.trim());
+}
+
 
 
