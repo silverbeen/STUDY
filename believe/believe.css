@@ -298,14 +298,35 @@ section>.main-plan>.plan{
     margin: 20px;
 }
 
+.test-one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+}
+.test-one span{
+    margin: 0;
+}
 .main-plan>.plan>.test>.testscore input{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
+    width: 50px;
     height:40px;
     margin: 10px;
     padding: 0 10px;
     outline: none;
+}
+.test-one >li:nth-of-type(2){
+    display: flex;
+    flex-direction: row;
+    list-style:none;
+}
+.test-one >li:nth-of-type(2) span{
+    margin-top: 0;
+    font-size: 30px;
+}
+li{
+    list-style: none;
 }
