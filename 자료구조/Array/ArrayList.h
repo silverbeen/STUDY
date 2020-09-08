@@ -1,13 +1,13 @@
-#ifndef_ARRAY_LIST_H
-#define_ARRAY_LIST_H
+#ifndef _ARRAY_LIST_H
+#define _ARRAY_LIST_H
 
 #define LEN_List 50
 
-typedef int LData;
+typedef int Ldata;
 
-typedef struct_arraylist{
+typedef struct _arraylist{
 	Ldata Array[LEN_List];
-	int curPosition;
+	int CurPosition;
 	int NumOfData;
 	int (*comp)(Ldata, Ldata);	
 }ArrayList;
