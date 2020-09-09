@@ -42,6 +42,7 @@ document.write(date + "일 ");
 document.write(dd + "요일<br>"); */
 
 //날짜 변수 2016년 7월
+/*
 var new_year = 2016, new_month = 6,
     d =new Date(new_year, new_month, 1), // 달력에 표시랄 시작일 부터 조회하기 위해 마지막 변수로 1을 입력
     //월 별 일수 구하기
@@ -78,7 +79,7 @@ function calender(new_year, new_month){
         caption_month = document.querySelector('.month');
 
     var start_day = document.querySelectorAll('tr td');
-
+ 
 
     //테이블 초기화 
     for(var i = 0; i < start_day.length; i++){
@@ -110,3 +111,81 @@ function calender(new_year, new_month){
         console.log(month);
     };
 
+*/
+var new_year = 2020, new_month = 8
+function calender()
+{
+    var d =new Date(new_year, new_month, 1), // 달력에 표시랄 시작일 부터 조회하기 위해 마지막 변수로 1을 입력
+        //월 별 일수 구하기
+        d_length = 32 - new Date(new_year, new_month, 32).getDate(),
+        year = d.getFullYear(),
+        month = d.getMonth(),
+        date = d.getDate(),
+        day = d.getDay();
+
+    //caption  영역 정보와 날찌 표시 객체
+    var caption_year = document.querySelector('.year'),
+        caption_month = document.querySelector('.month');
+        //테이블 caption 영역 내의 연도와 월을 표시할 객체를 변수로 지정
+
+    var start_day = document.querySelectorAll('tr td');
+    for(var i=day;start_day.length;i++){
+        try{
+            start_day[i].innerHTML="&nbsp";
+        }
+        catch{
+            break;
+        }
+    }
+    for(var i = day; i< day+d_length; i++){
+        try
+        {
+            start_day[i].innerHTML=date;
+        }
+        catch{
+            break;
+        }
+        date++;
+    }
+    caption_year.innerHTML = year;
+    caption_month.innerHTML = month + 1;
+}
+calender();
+var prev = document.getElementById('prev'),
+    next = document.getElementById('next');
+next.onclick=()=>{
+    new_month++;
+    calender();
+}
+prev.onclick=()=>{
+    new_month--;
+    calender();
+}
+
+/*function calender(new_year, new_month){
+    var d = new Date(new_year, new_month-1,1),
+        d_length = 32 - new Date(new_year, new_month-1, 32).getDate(),
+        year = d.getFullYear(),
+        month = d.getMonth(),
+        date = d.getDate(),
+        day = d.getDay();
+
+    var caption_year = document.querySelector('.year'),
+        caption_month = document.querySelector('.month');
+
+    var start_day = document.querySelectorAll('tr td');
+ 
+
+    //테이블 초기화 
+    for(var i = 0; i < start_day.length; i++){
+        start_day[i].innerHTML='&nbsp;';
+    }
+
+    for(var i = day; i < day + d_length; i++){
+        start_day[i].innerHTML=date;
+        date++;
+    }
+
+    caption_year.innerHTML= year;
+    caption_month.innerHTML=month+1;
+}*/

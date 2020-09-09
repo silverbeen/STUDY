@@ -1,6 +1,6 @@
 #calender_Wrap{
     background-color: #333;
-    width: 350px;
+    width: 550px;
 }
 caption{
     font-size: 1.5em;
@@ -16,8 +16,8 @@ table, th, td{
 }
 
 th, td{
-    width: 30px;
-    padding: 10px;
+    width: 50px;
+    padding: 15px;
 }
 
 th:first-child, td:first-child{
