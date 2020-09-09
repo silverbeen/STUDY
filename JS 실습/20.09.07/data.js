@@ -129,7 +129,7 @@ function calender()
         //테이블 caption 영역 내의 연도와 월을 표시할 객체를 변수로 지정
 
     var start_day = document.querySelectorAll('tr td');
-    for(var i=day;start_day.length;i++){
+    for(var i=0;start_day.length;i++){
         try{
             start_day[i].innerHTML="&nbsp";
         }
