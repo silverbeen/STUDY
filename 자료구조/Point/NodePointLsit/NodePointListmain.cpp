@@ -37,7 +37,29 @@ int main(void){
 	SetSortRule(MyList, WhoIsPred);
 	printf("\n오름차순 Sorting Rule 적용 자료 추가\n");
 	for(a=0;a<10;a+=2){
-		LInsert(MyList, NewPoint(A[a], A[a+1]));
-		
+		LInsert(MyList, NewPoint(A[a], A[a+1]));	
 	}
-}
+	
+	printf("\n오름차순 정렬 \n");
+	Sorting(MyList);
+	LPrint(MyList);
+	
+	Ldata point=(Point*)malloc(sizeof(Point)),rpoint;
+	
+	printf("\n좌표에 3인 포함된 모든 점 삭제\n");
+	if(LFirst(MyList, point)){
+		if(point->x ==3 || point->y ==3){
+			rpoint = LRemove(MyList);
+			printf("(%d %d) 제거 \n", rpoint->x, rpoint->y);
+		}
+		while(LNext(MyList, point)){
+			if(point->x ==3 || point->y == 3){
+				rpoint = LRemove(MyList);
+				printf("(%d %d) 제거 \n", rpoint->x, rpoint->y);
+				free(rpoint);
+			}
+		}
+		printf("\n 남아있는 모든 점 리스트\n");
+		LPrint(MyList);
+	}
+	}

@@ -64,6 +64,41 @@ void Sorting(List *plist){
 	}
 } 
 
+int LFirst(List *plist, Ldata pdata){ // 첫 자료가 있는가 ? 
+	if(plist->Head->Next){// 첫 자료가 있으면 
+		plist->Before=plist->Head; 
+		plist->Cur=plist->Head->Next;  // 첫 자료 위취를 현 위치로 설정 
+		
+		pdata->x =plist->Cur->x;// 현 위치 자료를 전달 변수에 복사 
+		pdata->y=plist->Cur->y;
+		return 1;		// 첫자료 있음 
+	}
+	
+	return 0;  // 저장된 자료가 없음 
+}
 
+int LNext(List *plist , Ldata pdata){
+	if(plist->Cur->Next){
+		plist->Before=plist->Cur;
+		plist->Cur=plist->Cur->Next;
+		
+		pdata->x=plist->Cur->x;
+		pdata->y=plist->Cur->y;
+		return 1;
+	}
+	return 0;
+} 
+
+Ldata LRemove(List *plist){
+	if(plist->numOfData){
+		Ldata rpos = plist->Cur;
+		
+		plist->Before->Next=rpos->Next;
+		plist->Cur=plist->Before;
+		plist->numOfData--;
+		
+		return rpos;
+	}
+}
 
 
