@@ -11,7 +11,7 @@ Undefined 타입
 - 값을 할당하지 않은 변수는 undefined의 값을 가짐
 
 Boolean 타입
-- ture와  false로 두가지의 값을 가짐
+- ture와  false로 두가지의 값을 가짐 참과 거짓 
 
 Null 타입
 - 한 가지 값
