@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="modal">
+        <div class="box" id="id">
+            <input type="id" placeholder="아이디를 입력하세요">
+            <button onclick="mondalWindow('none')">닫기</button>
+        </div>
+        <div class="box" id="pw">
+            <input type="password" placeholder="비밀번호를 입력하세요">
+            <button onclick="mondalWindowPw('none')">닫기</button>
+        </div>
+        <div id="button">
+            <button onclick="mondalWindow('block')">아이디</button>
+            <button onclick="mondalWindowPw('block')">비밀번호</button>
+        </div>
+    </div>
+    
+    <script>
+        function mondalWindow(val){
+            document.getElementById('id').style.display = val;
+            document.getElementById('pw').style.display="none";
+            //document.getElementById("myText").placeholder = "Type name here..";
+            //document.getElementById('tilte').innerHTML
+        }
+        function mondalWindowPw(val){
+            document.getElementById('pw').style.display=val;
+            document.getElementById('id').style.display="none";
+        }
+    </script>
+</body>
+</html>
