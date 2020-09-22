@@ -1,21 +1,21 @@
 #include <stdio.h>
-#include <stdilb.h>
+#include <stdlib.h>
 #include "CLinkedList.h"
 
 void ListInit(List * plist)
 {
 	plist->tail = NULL;
 	plist->cur = NULL;
-	pilsr->before = NULL;
+	plist->before = NULL;
 	plist->numOfData = 0;
 }
 
 void LInsertFront(List * plist, Data data)
 {
 	Node * newNode = (Node*)malloc(sizeof(Node));
-	newNode->Data = data;
+	newNode->data = data;
 	
-	if(plist->tail ==NULL)
+	if(plist->tail == NULL)
 	{
 		plist->tail = newNode;
 		newNode->next = newNode;
@@ -32,11 +32,11 @@ void LInsertFront(List * plist, Data data)
 void LInsert(List * plist, Data data)
 {
 	Node * newNode = (Node*)malloc(sizeof(Node));
-	newNode->Data =data;
+	newNode->data =data;
 	
-	if(plist->tail ==NULL){
+	if(plist->tail == NULL){
 		plist->tail = newNode;
-		newNode->nwxt= newNode;
+		newNode->next= newNode;
 	}
 	
 	else{
@@ -56,7 +56,7 @@ int LFirst(List * plist, Data * pdata){
 	plist->cur = plist->tail->next;
 	
 	*pdata = plist->cur->data;
-	return TRUE;
+	return  TRUE;
 }
 
 Data LRemove(List * plist){
@@ -75,11 +75,23 @@ Data LRemove(List * plist){
 	plist->before->next = plist->cur->next;
 	plist->cur = plist->before;
 	
-	free(rpos)
+	free(rpos);
 	(plist->numOfData)--;
 	return rdata;
 }
 
-int Lcount(List * plist){
+int LNext(List * plist, Data * pdata){
+	if(plist->tail==NULL){
+		return FALSE;
+	}
+	
+	plist->before = plist->tail;
+	plist->cur=plist->tail->next;
+	
+	*pdata = plist->cur->data;
+	return TRUE;
+}
+
+int LCount(List * plist){
 	return plist->numOfData;
 }
