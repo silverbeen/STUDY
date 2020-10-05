@@ -3,8 +3,8 @@
 
 typedef struct _node{
 	char N;
-	int K,E, M, C, S, R;
-	struct_node *Next;
+	int K,E, M, C, S;
+	struct _node *Next;
 	
 }Node;
 
