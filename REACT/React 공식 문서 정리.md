@@ -1,4 +1,4 @@
-# JSX
+# 1. JSX
 
 ```react
 function formatName(user) {
@@ -91,7 +91,7 @@ const element = {
 
 
 
-# 렌더링 요소
+# 2. 렌더링 요소
 
 - React 요소는 불변
 - 요소를 생성한 후에는 하위 또는 속성을 변경 할 수 없다
@@ -125,7 +125,7 @@ React DOM은 요소와 하위 요소를 이전 요소와 비교하고 DOM을 원
 
 
 
-# 구성 요소 및 소품
+# 3. 구성 요소 및 소품
 
 - 구성요소는 JS 함수와 같음
 - 임의의 입력 ( "props"라고 함)을 받아들이고 화면에 표시되어야하는 내용을 설명하는 React 요소를 반환
@@ -290,7 +290,7 @@ function Comment(props) {
 
 
 
-# 상태 및 수명 주기
+# 4. 상태 및 수명 주기
 
 ```react
 function tick() {
@@ -398,3 +398,136 @@ ReactDOM.render(
 - DOM에 렌더링 될 때마다 타이머를 설정 하는 것을 마운팅이라고 한다
 
 - 타이머를 지우고 싶은 것은 언 마운트 라고 한다
+
+
+
+# 5. 이벤트처리
+
+- react 이벤트는 소문자가 아닌 camelCase(맨 처음글자를 대문자로 표기) 를 사용하려 이름이 지정됨
+- JSX를 사용하면 문자열이 아닌 이벤트 핸들러로 함수를 전달
+
+ex) HTML 
+
+```html
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+```
+
+ex) React
+
+```react
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+```
+
+
+
+> **preventDefault ,  stopPtopagation,  return false  :** 이벤트 중단을 위해 자주 사용되는 코드
+>
+> **event.preventDefault ** :  현재 이벤트의 기본 동작을 중단
+>
+> **event.stopPtopagation** : 현재 이벤트가 상위로 전파되지 않도록 중단
+
+
+
+- React를 사용할 때 일반적으로 `addEventListener` DOM 요소가 생성된 후 리스너를 추가하기 위해 호출 할 필요가 없음
+
+- 대신 요소가 처음 렌더링 될 때 리스너를 제공
+
+
+
+**사용자가 "ON", "OFF" 상태를 전환 할 수 있는 버튼**
+
+```react
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+
+
+- 위 코드는 React 전용 동작이 아니고, 단지 **JS 에서 함수가 작동하는 방식**의 일부기 떄문에 `onClick={this.handleClick}`  로 바꾸어야 한다
+
+```react
+class LoggingButton extends React.Component {
+  // This syntax ensures `this` is bound within handleClick.
+  // Warning: this is *experimental* syntax.
+  handleClick = () => {
+    console.log('this is:', this);
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Click me
+      </button>
+    );
+  }
+}		
+```
+
+- 화살표 함수를 사용
+
+```react
+class LoggingButton extends React.Component {
+  handleClick() {
+    console.log('this is:', this);
+  }
+
+  render() {
+    // This syntax ensures `this` is bound within handleClick
+    return (
+      <button onClick={() => this.handleClick()}>
+        Click me
+      </button>
+    );
+  
+```
+
+
+
+## 이벤트 핸들러에 인수 전달
+
+
+
+```react
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+
+- 두줄은 동일하며 각각 화살표 기능을 사용
+
+
+
+
+
+# 6. 조건부 렌더링
+
+조건부 렌더링은 JS 조건이 작동하는 방식과 동일
