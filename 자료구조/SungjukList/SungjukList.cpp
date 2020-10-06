@@ -8,7 +8,12 @@ void InItList(List *plist) { //초기화
 	plist->Head = Head;
 	plist->Head->Next=NULL;
 	plist->NumOfData=0;
-	plist->comp=NULL;
+	plist->func=NULL;
+}
+
+void PNode(Ldata pdata){
+	printf("  %c  %3d %3d %3d %3d %3d %3d\n", pdata->N, pdata->K, 
+	pdata->E, pdata->M, pdata->C, pdata->S, pdata->R);
 }
 
 void LPrint(List *plist){ //출력 
@@ -16,11 +21,9 @@ void LPrint(List *plist){ //출력
 	Ldata pdata=plist->Head->Next;
 	
 	while(pdata) {
-		printf("%c, %2d, %2d, %2d, %2d, %3d, %2d\n", pdata->N, pdata->K, 
-		pdata->E, pdata->M, pdata->C, pdata->S);
+		PNode(pdata);
 		pdata = pdata->Next;
 	}
-	
 	printf("\n");
 }
 
@@ -29,7 +32,7 @@ void LPrint(List *plist){ //출력
 void SInsert(List *plist ,Ldata pdata){ //정렬해서 삽입 
 	Ldata Before =plist->Head;
 	
-	while(Before->Next && plist->comp(pdata, Before->Next)){
+	while(Before->Next && plist->func(pdata, Before->Next)){
 		Before = Before->Next;
 	}
 	pdata->Next = Before->Next;
@@ -37,14 +40,14 @@ void SInsert(List *plist ,Ldata pdata){ //정렬해서 삽입
 }
 
 void LInsert(List *plist, Ldata pdata) {
-	if(plist->comp){
+	if(plist->func){
 		SInsert(plist, pdata);
 	}
 	else{
 		pdata->Next = plist->Head->Next;
 		plist->Head->Next = pdata;
 	}
-	LPrint(plist);
+	//LPrint(plist);
 	plist->NumOfData++;
 }
 
