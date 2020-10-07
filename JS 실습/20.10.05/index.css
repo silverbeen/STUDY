@@ -1,24 +1,34 @@
 /* 마우스 올려주면 45각도로 회전*/
+body{
+    margin: 0;
+}
 
 #box{
     width: 50px;
     height: 50px;
     border-radius: 20px;
-    position: relative;
+    position: absolute;
     background-color: yellow;
-    transition: all ease 2.5s;
 }
 #box:hover{
     transform: rotate(360deg);
+    transition: 1s;
 }
 
 #leftbar{
-    display: none;
-    width: 200px;
+    display: block;
+    width: 0px;
     height: 100%;
     background-color: teal;
     position: absolute;
-    
-    transition: all ease 2s;
+    transition: 2s;
+    overflow: hidden;
+}
 
+#delete{
+    width: 0px;
+    height: 50px;
+    background-color: yellowgreen;
+    transition: 2s;
+    float: right;
 }

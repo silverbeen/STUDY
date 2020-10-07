@@ -1,10 +1,12 @@
-
+let leftbar = document.getElementById('leftbar');
+let close = document.getElementById('delete');
 
 function show() {
-    let leftbar = document.getElementById('leftbar');
-    let box = document.getElementById('box');
+   leftbar.style.width="200px";
+   close.style.width="50px";
 
-    box.addEventListener("click", () => {
-        leftbar.style.display="block";
-    });
+}
+
+function fncClose(){
+    leftbar.style.width="0px";
 }
