@@ -513,6 +513,8 @@ class LoggingButton extends React.Component {
 
 
 
+
+
 ## 이벤트 핸들러에 인수 전달
 
 
@@ -528,6 +530,324 @@ class LoggingButton extends React.Component {
 
 
 
+
+
 # 6. 조건부 렌더링
 
-조건부 렌더링은 JS 조건이 작동하는 방식과 동일
+- JS 조건이 작동하는 방식과 동일
+- 그냥 if 문과 비슷함
+- if , 조건연산자와 같은 연산자를 사용하여 현재 state 를 나타내는 요소를 만들고 UI 를 업데이트 하여 일치 시킴
+
+
+
+ 사이트를 제작하다가 특정 조건에 따라 다른 컴포넌트를 보여주고 싶을 때
+
+- 로그인 , 회원가입 버튼   :   로그인을 하지 않을 상태에는 로그인 버튼이 보여져야 하고, 로그인을 한 상태에서는 로그인 버튼이 사라지고 로그아웃 버튼이 렌더링 되어야 한다
+
+  
+
+  - 함수형 컴포넌트로 로그인과 로그아웃을 생성
+
+  ```react
+  function LoginButton() {
+      return (
+        <button>
+            로그인
+        </button>
+      );
+  }
+  function LogoutButton() {
+      return (
+          <button>
+              로그아웃
+          </button>
+  	);
+  }
+  ```
+
+  
+  - UserButton이라는 함수 컴포넌트를 생성하고 조건에 따라 리턴하는 버튼을 다르게 만들어줌
+
+  ```react
+  function UserButton(props) {
+      if(props.isLoggedIn) {
+          return <LogoutButton/>;
+      }
+      return <LoginButton/>;
+  }
+  
+  ```
+
+
+
+
+
+- 전체 코드
+
+```react
+import React from 'react';
+
+//추가
+function LoginButton() {
+    return (
+      <button>
+          로그인
+      </button>
+    );
+}
+function LogoutButton() {
+    return (
+        <button>
+            로그아웃
+        </button>
+);
+}
+function UserButton(props) {
+    if(props.isLoggedIn) {
+        return <LogoutButton/>;
+    }
+    return <LoginButton/>;
+}
+
+function App() {
+
+    return (
+      <UserButton isLoggedIn={true}></UserButton>
+    );
+
+}
+
+export default App;
+```
+
+UserButton에 isLoggedIn 프로퍼티를 true로 전달하면 로그아웃 버튼이 렌더링됩니다.
+
+
+
+
+
+## 엘리먼트 변수 
+
+
+
+```react
+function App() {
+    let Button;
+    let isLoggedIn = false;
+    if(isLoggedIn) {
+        Button = <LogoutButton/>;
+    }else{
+        Button = <LoginButton/>;
+    }
+```
+
+- 첫줄에 Button 이라는 변수를 선언후 isLoggedln 이 true 인지 false 인지에 따라 Button이라는 변수에 Login, Logout버튼을 할당
+- 실제 사용할 때는 isLoggedIn은 state로 사용해야함
+
+
+
+
+
+## 인라인 구문
+
+짧고 간단하게 **JSX**에서 인라인으로 처리
+
+**JSX**안에서 중괄호를 사용하면 논리연산자 표현식을 사용
+
+
+
+```react
+function App() {
+    let isLoggedIn = false;
+    return (
+        {
+            isLoggedIn ? <LogoutButton/> : <LoginButton/>
+        }
+    );
+
+}
+```
+
+
+
+
+
+- && 연산자로 if 의 조건 표현 
+
+```react
+{
+	isLoggedIn && <div>안녕하세요!</div>
+}
+{
+	isLoggedIn ? <LogoutButton/> : <LoginButton/>
+}
+```
+
+
+
+
+
+## 컴포넌트 렌더링 막기
+
+
+
+위험 안내 문구 처럼 특정 상황에만 렌더링 되어야 하는 컴포넌트는  return null 을 이용하기
+
+
+
+```react
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+
+```
+
+
+
+
+
+# 7. 리스트와 키 
+
+
+
+```react
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) => number * 2);
+console.log(doubled);
+```
+
+콘솔 창에는 [2,4,6,8,10] 이라고 찍힌다
+
+
+
+## 다수 컴포넌트 렌더링
+
+
+
+중괄호 `{}` 를 사용하여 [JSX에 포함](https://reactjs-kr.firebaseapp.com/docs/introducing-jsx.html#embedding-expressions-in-jsx) 시키는 것이 가능
+
+
+
+```react
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+```
+
+전체 `listItems` 배열을 `<ul>` 요소 안에 삽입한 뒤 [DOM에서 렌더링](https://reactjs-kr.firebaseapp.com/docs/rendering-elements.html#rendering-an-element-into-the-dom) 합니다.
+
+
+
+- 1부터 5까지의 숫자로 이루어진 리스트
+
+```react
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+```
+
+
+
+
+
+## 기본 리스트 컴포넌트
+
+
+
+리스트를 컴포넌트 안에서 렌더링
+
+```react
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li>{number}</li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+이렇게 작성하게 되면  리스트 아이템에 키를 넣어야 한다는 경고가 표시됨
+
+
+
+- key 포함
+
+```react
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+```
+
+
+
+
+
+## 키
+
+: React 가 어떤 **아이템이 바뀌었는지, 추가되었는지 삭제 되었는지 인식**하는데 도움
+
+
+
+### 키를 선택하는 가장 좋은 방법
+
+
+
+#### ID
+
+- 아이템을 고유하게 식별 할 수 있는 문자열 사용 -> 대부분 데이터의 ID를 키로 사용함
+
+```react
+const todoItems = todos.map((todo) =>
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+```
+
+
+
+- 만약 안정적인 ID 가 없다면 인덱스로 키를 넣어 정렬
+- 순서가 바뀔 수 있는 경우 사용 하지 않는 것이 가장 좋음
+
+```react
+const todoItems = todos.map((todo, index) =>
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+
+```
+
+
+
+
+
+## 키로 컴포넌트 추출하기
+
