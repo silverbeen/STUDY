@@ -3,7 +3,7 @@
 #include <string.h>
 #include "NodePointList.h"
 
-void InItList(List *plist) {
+void InItList(List *plist) { // 초기화 
 	Ldata Head = (Point*)malloc(sizeof(Point));
 	plist->Head = Head;
 	plist->Head->Next=NULL;
@@ -15,7 +15,7 @@ void PNode(Ldata pnode){
 	printf("(%d, %d)", pnode->x, pnode->y);
 }
 
-void LPrint(List *plist){
+void LPrint(List *plist){//출력 
 	Ldata pdata=plist->Head->Next;
 	
 	while(pdata) {
