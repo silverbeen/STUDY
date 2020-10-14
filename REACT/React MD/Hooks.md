@@ -95,3 +95,55 @@ const Info = () => {
 
 
 # 2. useEffect
+
+- 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록 설정 할 수 있는 Hook  
+
+```javascript
+const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
+  useEffect(() => {
+    console.log('렌더링이 완료되었습니다!');
+    console.log({
+      name,
+      nickname
+    });
+  });
+```
+
+
+
+## 마운트 될 때만 실행 하고 싶을 때
+
+- useEffect 에서 설정한 함수가 컴포넌트가 화면에 가장 처음에 렌더링 될 때만 실행되고 업데이트 할 경우에는 실행 할 필요가 없는 경우엔 함수의 두번재 파라미터로 비어있는 배열을 넣어 주면 된다
+
+  ```javascript
+  useEffect(() => {
+      console.log('마운트 될 때만 실행됩니다.');
+    }, []);
+  ```
+
+
+
+## 특정 값이 업데이트 될 때만 실행 하고 싶을때
+
+- useEffect 를 사용 할 때 특정 값이 변경이 될 때만 호출 하고 싶으면
+
+1. ex)  클래스 형일 때 
+
+```javascript
+componentDidUpdate(prevProps, prevState) {
+  if (prevProps.value !== this.props.value) {
+    doSomething();  
+  }
+}
+```
+
+- props 안에 들어있는 value 값이 바뀔 때에만 특정 작업 수정 가능
+- 이 작업은 useEffect 에서 해야한다면 ??
+
+```js
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
+```
+
