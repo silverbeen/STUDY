@@ -3,6 +3,10 @@
     background-size: 100%;
     height: 100vh;
 } */
+a{
+    text-decoration: none;
+    color: black;
+}
 .login-modal{
     text-align: center;
     display:  none;
@@ -17,6 +21,25 @@
     font-family: Arial, Helvetica, sans-serif;
     animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;
     box-shadow: 0 25px 40px -20px #3c4a56;
+}
+.login{
+    
+}
+.login input{
+    outline: none;
+    font-size: 15px;
+    background-color: rgb(243, 240, 240);
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px;
+    font-weight: 300;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.login input::placeholder{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .left-menu{
