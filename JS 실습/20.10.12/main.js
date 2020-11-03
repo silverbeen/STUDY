@@ -109,3 +109,21 @@ slideChild[1].addEventListener('click', function(){
 slideChild[2].addEventListener('click', function(){
     slide.style.transform = 'translateX(-200vw)';
 });
+
+//스크롤을 내리면 상단 메뉴의 배경 색, 글자 색 바뀜
+
+/* $(window).on('scroll', function() {
+    $('.nav-menu').css({backgroundColor: 'black', color: 'withe', transform: '1s'});
+}) */
+
+$(window).on('scroll', function() {
+    if($(window).scrollTop() > 200 ){
+        $('.nav-menu').addClass('nav-black');
+        $('.nav-menu h4').addClass('.tilte');
+    }
+    else if($(window).scrollTop() <= 200 ) {
+        $('.nav-menu').removeClass('nav-black');
+        $('.nav-menu h4').removeClass('.tilte');
+    }
+})
+

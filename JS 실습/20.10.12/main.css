@@ -22,9 +22,7 @@ a{
     animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;
     box-shadow: 0 25px 40px -20px #3c4a56;
 }
-.login{
-    
-}
+
 .login input{
     outline: none;
     font-size: 15px;
@@ -60,7 +58,22 @@ h4{
 .nav-menu{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
+    position:  fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 5;
+    transition:  all 1s;
+
+}
+.nav-black{
+    background-color:  black;
+    color: white;
+    transition: 2s;
+}
+.title{
+    font-size: 50px;
 }
 
 .list-group{
@@ -103,6 +116,8 @@ h4{
 .slide-box img{
     width: 40vw;
 }
+
+/* 스크롤 바  */
 ::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-thumb{
     background-color: rgba(22, 196, 196, 0.849);
@@ -115,3 +130,4 @@ h4{
     border-radius: 10px;
     box-shadow: 0 0 5px gray;
 }
+
