@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.sticky{
+    position: sticky;
+    top: 200px;
+    float: right;
+    width: 1100px;
+}
+.white{
+    background-color: white;
+    height: 4000px;
+    margin-top: 200px;
+}
+.left-text{
+    float: left;
+    color: black;
+    padding: 20px;
+    width: 700px;
+}
+
+img{
+    width: 1000px;
+    height: auto;
+}
+
+.card{
+    height: 4000px;
+    margin-top: 400px;
+    margin-bottom: 400px;
+}
+.flower1{
+    position: sticky;
+    top: 1px;
+    float: left;
+}
+.flower2{
+    position: sticky;
+    top: 1px;
+    z-index: 2;
+}
+.flower3{
+    position: sticky;
+    top: 1px;
+    z-index: 3;
+}
