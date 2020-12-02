@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  outline: none;
 }
 
 body {
@@ -9,28 +11,110 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(#089179, #089198);
 }
 section {
   width: 30%;
-  height: 70%;
-  border: 1px solid red;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+}
+.listbox {
+  width: 95%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
-.listbox{
-  width: 90%;
-  height: 80%;
-  border: 1px solid red;
-}
-section > h1{
-  
+.listbox h1 {
+  margin: 30px;
+  color: #089193;
+  font-size: 40px;
 }
 .input {
+  width: 80%;
   display: flex;
   flex-direction: row;
 }
-.input img{
-  width: 30px;
+.input input {
+  height: 30px;
+  outline: none;
+  border: 2px solid #089193;
+  border-radius: 10px;
+  width: 80%;
+  padding: 5px 15px;
+  margin: 0 10px;
+}
+.input button {
+  padding: 5px;
+  background-color: #089193;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+}
+#listWrap{
+  margin-top: 20px;
+  width: 85%;
+  overflow-y: scroll;
+}
+#listWrap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+ul{
+  
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+.listitem {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.listitem > button {
+  height: 35px;
+  padding: 5px;
+  background-color: #089193;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+}
+.listvalue {
+  margin: 10px;
+  border: 2px solid #089193;
+  width: 70%;
+  height: auto;
+  max-height: 50px;
+  border-radius: 10px;
+}
+.listvalue input {
+  margin: 5px 10px;
+  background: transparent;
+  border: none;
+  font-size: 17px;
+  color: black;
+}
+
+li img {
+  margin: 10px;
+  width: 35px;
+}
+
+.modal{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(red, green, blue, alpha);
 }
