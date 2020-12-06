@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="./todo.css" />
   </head>
   <body>
+    <!-- 수정 모달 창 -->
+    <div class="modal">
+      <div class="modal-main">
+        <h1>list 수정하기</h1>
+        <div class="modify">
+          <input
+            id="todomodify"
+            type="text"
+            placeholder="변경할 내용을 입력하세요"
+          />
+          <button id="complete">수정완료</button>
+        </div>
+      </div>
+    </div>
     <section>
       <!-- 리스트 전체 -->
       <div class="listbox">
@@ -21,7 +35,7 @@
             <!-- 리스트 아이템 -->
             <li class="listitem">
               <div class="listvalue">
-                <input placeholder="TO DO LIST 만들기!!" disabled="true"></input>
+                <p id="listvalue">dddd</p>
               </div>
               <button id="modify">수정</button>
               <!-- 삭제 버튼 -->
@@ -36,11 +50,6 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="modal">
-        <div class="modal-main">
-
-        </div>
-      </div> -->
     </section>
 
     <script src="./todo.js"></script>
