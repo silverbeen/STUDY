@@ -17,7 +17,7 @@
             type="text"
             placeholder="변경할 내용을 입력하세요"
           />
-          <button id="complete">수정완료</button>
+          <button id="complete" onclick="modifySucc()">수정완료</button>
         </div>
       </div>
     </div>
@@ -33,20 +33,6 @@
         <div id="listWrap">
           <ul id="list">
             <!-- 리스트 아이템 -->
-            <li class="listitem">
-              <div class="listvalue">
-                <p id="listvalue">dddd</p>
-              </div>
-              <button id="modify">수정</button>
-              <!-- 삭제 버튼 -->
-              <img
-                class="itemDelete"
-                onclick="deleteMe(event);"
-                src="./close.png"
-                alt="delete"
-                title="delete"
-              />
-            </li>
           </ul>
         </div>
       </div>
