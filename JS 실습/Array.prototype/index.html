@@ -19,8 +19,21 @@
         <li>프로필</li>
         <li>이름</li>
         <li>학교</li>
-        <input id ="search" type="text" placeholder="검색할 내용을 입력해주세요">
+        <input
+          id="search"
+          type="text"
+          placeholder="검색할 내용을 입력해주세요"
+        />
+        <input type="checkbox" id="1" onclick="concat1()" />
+        <input type="checkbox" id="2" />
+        <button id="concatButton" onclick="concat()">합치기</button>
       </ul>
+      <div class="concat">
+        <p>1번과 3번 합치기</p>
+        <input type="checkbox" id="1" onclick="concat1()" />
+        <input type="checkbox" id="2" />
+        <div id="result"></div>
+      </div>
     </section>
     <script src="./map.js"></script>
   </body>

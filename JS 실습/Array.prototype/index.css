@@ -15,7 +15,6 @@ header {
   position: fixed;
 }
 ul {
-  border: 1px solid red;
   float: right;
   display: flex;
   flex-direction: row;
@@ -47,4 +46,8 @@ section {
 }
 section ul{
   float: left;
+}
+
+#student-info{
+  border: solid 1px black;
 }
