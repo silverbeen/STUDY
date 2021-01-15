@@ -1,9 +1,9 @@
- //map 
 const numbers = [1, 2, 3, 4, 12, 3, 4213, 2312, 12312, 2, 3];
 const Anumber = (number) => number >10;
 const arr1 = ["강금빈", "강은빈", "강동빈"];
 const arr2 = ["강강강", "은은은", "빈빈빈"];
 
+//map 
 function map(array, func) {
   let temp = [];
   for (let i = 0; i < array.length; i++) {
