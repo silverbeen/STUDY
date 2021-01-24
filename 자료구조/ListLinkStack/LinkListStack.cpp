@@ -24,7 +24,7 @@ void SPush(Stack *pstack, Ndata pdata){
 }
 
 Ndata SPop(Stack *pstack){
-	if(SEmpty(psatck)) return NULL;
+	if(SEmpty(pstack)) return NULL;
 	
 	Node *rnode = pstack->Head->Next;
 	Ndata rdata = rnode->Data;

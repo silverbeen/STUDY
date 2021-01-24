@@ -1,4 +1,4 @@
-#Ifndef _LINK_LIST_STACK_H_
+#ifndef _LINK_LIST_STACK_H_
 #define _LINK_LIST_STACK_H_
 
 typedef char Ndata;
@@ -19,5 +19,6 @@ void SPush(Stack*, Ndata);
 Ndata SPop(Stack*);
 Ndata SPeek(Stack*);
 int SEmpty(Stack*);
+Stack *StackInit(void);
 
 #endif
