@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>체크박스 하나만 선택하기</title>
+
+    <script type="text/javascript">
+      function oneCheckbox(a) {
+        var obj = document.getElementsByName("checkbox1");
+
+        for (var i = 0; i < obj.length; i++) {
+          if (obj[i] != a) {
+            obj[i].checked = false;
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form name="sendForm" method="get">
+      <input
+        type="checkbox"
+        name="checkbox1"
+        value="a1"
+        onclick="oneCheckbox(this)"
+      />a1
+
+      <input
+        type="checkbox"
+        name="checkbox1"
+        value="a2"
+        onclick="oneCheckbox(this)"
+      />a2
+
+      <input
+        type="checkbox"
+        name="checkbox1"
+        value="a3"
+        onclick="oneCheckbox(this)"
+      />a3
+    </form>
+  </body>
+</html>
